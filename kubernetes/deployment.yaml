@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: example-site
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: example-site
+    spec:
+      containers:
+      - name: example-site
+        image: gcr.io/radical-sloth/example-static-site-migration-to-kubernetes
+        ports:
+        - containerPort: 80
